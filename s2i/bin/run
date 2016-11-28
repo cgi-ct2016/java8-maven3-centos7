@@ -5,4 +5,4 @@ echo "---> Starting Java8 application"
 echo "--> # MVN_TARGET = $MVN_TARGET"
 echo "--> # JAVA_OPTS = $JAVA_OPTS"
 echo "---> Running application from jar ($(find $MVN_TARGET -name *.jar)) ..."
-java $JAVA_OPTS -jar `find $MVN_TARGET -name *.jar
+java $JAVA_OPTS -jar `find $MVN_TARGET -name *.jar`
