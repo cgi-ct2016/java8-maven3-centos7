@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+echo "---> Installing application source ..."
+mv /tmp/src/* ./
+mvn clean install $MVN_ARGS
+# Fix source directory permissions
+fix-permissions ./
+# set permissions for any installed artifacts
+fix-permissions /opt/app-root
