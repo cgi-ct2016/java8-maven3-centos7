@@ -17,9 +17,6 @@ LABEL io.k8s.description="Platform for building and running Java8/Maven3 applica
 RUN INSTALL_PKGS="curl java-$JAVA_VERSION-openjdk java-$JAVA_VERSION-openjdk-devel" && \
    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
    rpm -V $INSTALL_PKGS && \
-   # Remove centos-logos (httpd dependency, ~20MB of graphics) to keep image
-   # size smaller.
-   rpm -e --nodeps centos-logos && \
    yum clean all -y
 
 RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
