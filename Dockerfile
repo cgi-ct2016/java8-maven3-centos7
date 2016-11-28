@@ -23,8 +23,8 @@ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/bina
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
-ENV JAVA_HOME /usr/lib/jvm/java \
-   MAVEN_HOME /usr/share/maven
+ENV JAVA_HOME=/usr/lib/jvm/java \
+   MAVEN_HOME=/usr/share/maven
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
