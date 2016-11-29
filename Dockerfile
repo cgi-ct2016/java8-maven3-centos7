@@ -12,7 +12,7 @@ ENV JAVA_VERSION=1.8.0 \
 LABEL io.k8s.description="Platform for building and running Java8/Maven3 applications" \
       io.k8s.display-name="Java8 Maven3" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,java,java8,maven,maven3,springboot"
+      io.openshift.tags="builder,java,java8,maven,maven3"
 
 RUN INSTALL_PKGS="curl java-$JAVA_VERSION-openjdk java-$JAVA_VERSION-openjdk-devel" && \
    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
